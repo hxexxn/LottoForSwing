@@ -78,8 +78,6 @@ public class RegistFrame extends JFrame {
 				boolean checkId = false;
 				boolean checkPw = false;
 				
-
-
 				String resultID = id.trim().replaceAll(" ", "");
 				String onlyEng = resultID.replaceAll("[^a-zA-Z0-9]", "");
 				
@@ -185,7 +183,7 @@ public class RegistFrame extends JFrame {
 				String id = idIputfield.getText();
 				String resultID = id.trim().replaceAll(" ", "");
 				String onlyEng = resultID.replaceAll("[^a-zA-Z0-9]", "");
-			
+				
 				
 				MySQLDB db = new MySQLDB();
 				

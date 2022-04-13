@@ -21,25 +21,6 @@ public class Lotto extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Lotto frame = new Lotto();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public Lotto() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 800);
@@ -49,7 +30,7 @@ public class Lotto extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel oneLabel = new JLabel();
+		JLabel oneLabel = new JLabel("충");
 		oneLabel.setFont(new Font("Dialog", Font.BOLD, 30));
 		oneLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		oneLabel.setBackground(new Color(255, 240, 245));
@@ -58,7 +39,7 @@ public class Lotto extends JFrame {
 		contentPane.add(oneLabel);
 		
 		
-		JLabel twoLabel = new JLabel();
+		JLabel twoLabel = new JLabel("전");
 		twoLabel.setFont(new Font("Dialog", Font.BOLD, 30));
 		twoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		twoLabel.setBounds(160, 118, 96, 89);
@@ -66,7 +47,7 @@ public class Lotto extends JFrame {
 		twoLabel.setOpaque(true);
 		contentPane.add(twoLabel);
 		
-		JLabel threeLabel = new JLabel();
+		JLabel threeLabel = new JLabel("해");
 		threeLabel.setFont(new Font("Dialog", Font.BOLD, 30));
 		threeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		threeLabel.setBackground(new Color(255, 240, 245));
@@ -74,7 +55,7 @@ public class Lotto extends JFrame {
 		threeLabel.setOpaque(true);
 		contentPane.add(threeLabel);
 		
-		JLabel fourLabel = new JLabel();
+		JLabel fourLabel = new JLabel("주");
 		fourLabel.setFont(new Font("Dialog", Font.BOLD, 30));
 		fourLabel.setOpaque(true);
 		fourLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -82,7 +63,7 @@ public class Lotto extends JFrame {
 		fourLabel.setBounds(416, 118, 96, 89);
 		contentPane.add(fourLabel);
 		
-		JLabel fiveLabel = new JLabel();
+		JLabel fiveLabel = new JLabel("세");
 		fiveLabel.setFont(new Font("Dialog", Font.BOLD, 30));
 		fiveLabel.setOpaque(true);
 		fiveLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -90,7 +71,7 @@ public class Lotto extends JFrame {
 		fiveLabel.setBounds(544, 118, 96, 89);
 		contentPane.add(fiveLabel);
 		
-		JLabel sixLabel = new JLabel();
+		JLabel sixLabel = new JLabel("요");
 		sixLabel.setFont(new Font("Dialog", Font.BOLD, 30));
 		sixLabel.setOpaque(true);
 		sixLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -127,7 +108,7 @@ public class Lotto extends JFrame {
 			}
 		});
 		
-		rouletteBtn.setBounds(288, 256, 224, 55);
+		rouletteBtn.setBounds(288, 238, 224, 55);
 		contentPane.add(rouletteBtn);
 		
 		JLabel lblNewLabel = new JLabel("로또 번호 뽑기");
@@ -136,5 +117,16 @@ public class Lotto extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(325, 31, 151, 28);
 		contentPane.add(lblNewLabel);
+		
+		JButton resetBtn = new JButton("리셋");
+		resetBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Lotto lotto = new Lotto();
+				setVisible(false);
+				lotto.setVisible(true);
+			}
+		});
+		resetBtn.setBounds(288, 309, 224, 55);
+		contentPane.add(resetBtn);
 	}
 }

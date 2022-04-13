@@ -69,7 +69,7 @@ public boolean loginSelect(String mId, String mPW) {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		conn = DriverManager.getConnection(dbUrl, dbId, dbPw);
 		
-		String sql = "SELECT * from memberTBL WHERE mId = ? and mPW = ?;";
+		String sql = "SELECT * from memberTBL WHERE mId = ? and mPW = ?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, mId);
 		pstmt.setString(2, mPW);
